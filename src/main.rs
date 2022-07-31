@@ -1,9 +1,9 @@
-extern crate create2crunch;
+extern crate evm_vanity_address_generator;
 
 use std::env;
 use std::process;
 
-use create2crunch::Config;
+use evm_vanity_address_generator::Config;
 
 fn main() {
     let config = Config::new(env::args()).unwrap_or_else(|err| {
@@ -12,12 +12,12 @@ fn main() {
     });
 
     if config.gpu_device == 255 {
-	    if let Err(e) = create2crunch::cpu(config) {
+	    if let Err(e) = evm_vanity_address_generator::cpu(config) {
 	        eprintln!("CPU application error: {}", e);
 	        process::exit(1);
 	    }
     } else {
-	    if let Err(e) = create2crunch::gpu(config) {
+	    if let Err(e) = evm_vanity_address_generator::gpu(config) {
 	        eprintln!("GPU application error: {}", e);
 	        process::exit(1);
 	    }

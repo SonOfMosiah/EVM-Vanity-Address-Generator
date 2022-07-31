@@ -1,6 +1,6 @@
 [package]
-name = "create2crunch"
-version = "0.2.0"
+name = "evm_vanity_address_generator"
+version = "1.0.0"
 authors = ["SonOfMosiah <ammon@alta.finance"]
 
 [dependencies]
